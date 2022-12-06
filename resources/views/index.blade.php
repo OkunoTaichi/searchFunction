@@ -7,6 +7,7 @@
     <title>Github 連携テスト</title>
 </head>
 <body>
+    github連携テスト2
     
 </body>
 </html>
