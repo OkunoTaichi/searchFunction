@@ -2,10 +2,17 @@
 
 namespace Database\Seeders;
 
+
 use Illuminate\Database\Seeder;
+
 
 class DatabaseSeeder extends Seeder
 {
+
+     // ここから追加
+     private const SEEDERS = [
+        RoomSeeder::class,
+    ];
     /**
      * Seed the application's database.
      *
@@ -13,6 +20,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+         // ここから追加
+         foreach(self::SEEDERS as $seeder) {
+            $this->call($seeder);
+        }
     }
 }
