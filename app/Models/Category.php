@@ -10,8 +10,9 @@ class Category extends Model
     //categoriesテーブルから::pluckでcategory_nameとidを抽出し、$categoriesに返す関数を作る
     public function getLists()
     {
+        // カテゴリー名かカテゴリーIDで検索かける
         $categories = Category::pluck('category_name', 'id');
-
+        
         return $categories;
     }
     //「カテゴリ(category)はたくさんの商品(products)をもつ」というリレーション関係を定義する
