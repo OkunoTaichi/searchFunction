@@ -7,10 +7,28 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+
+    use HasFactory;
+
+    //テーブル名
+    protected $table = 'products';
+
+    //可変項目
+    protected $fillable = 
+    [
+        'product_name',
+        'category_id',
+        'price',
+        'product_ab_name'
+    ];
+
+
     //「商品(products)はカテゴリ(category)に属する」というリレーション関係を定義する
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
+
+
 
 }
