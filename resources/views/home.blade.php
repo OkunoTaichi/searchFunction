@@ -1,23 +1,34 @@
-@extends('layouts.app')
+@include('search_layouts.header')
+  <body>
+   
+    <div id="app">
+      <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        @include('search_layouts.nav')<!-- ログインナビゲーションを継承 -->
+      </nav>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+      <main class="py-4">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+        
+        <div class="container">
+          <div class="change_nav">
+            @include('search_layouts.change_nav')<!-- 新規作成などのページ遷移ナビゲーションを継承 -->
+          </div>
+       
         </div>
+      </main>
     </div>
-</div>
-@endsection
+  </body>
+</html>
+
+
+<script>
+  function checkSubmit(){
+      if(window.confirm('送信してよろしいですか？')){
+          return true;
+      } else {
+          return false;
+      }
+  }
+
+</script>
+

@@ -6,9 +6,7 @@
         @include('search_layouts.nav')<!-- ログインナビゲーションを継承 -->
       </nav>
 
-      <main class="py-4">
-
-        
+      <main class="py-4">  
         <div class="container">
           <div class="change_nav">
             @include('search_layouts.change_nav')<!-- 新規作成などのページ遷移ナビゲーションを継承 -->

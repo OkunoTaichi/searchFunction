@@ -8,11 +8,6 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-
-     // ここから追加
-     private const SEEDERS = [
-        RoomSeeder::class,
-    ];
     /**
      * Seed the application's database.
      *
@@ -20,9 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         // ここから追加
-         foreach(self::SEEDERS as $seeder) {
-            $this->call($seeder);
-        }
+      
+        $this->call(CategoriesSeeder::class);
+        
     }
 }

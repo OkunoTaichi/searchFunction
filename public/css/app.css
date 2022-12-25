@@ -10819,3 +10819,15 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+
+
+/* オリジナル */
+.form-wrap{
+  position: relative;
+}
+.delete{
+  position: absolute;
+  bottom: 0;
+  left: 250px;
+}

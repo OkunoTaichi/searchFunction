@@ -18,7 +18,7 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     // return view('auth.login');
     // return view('welcome');
-    return view('home');
+    return view('index');
 });
 
 Auth::routes();
@@ -31,18 +31,18 @@ Route::post('/room', [RoomController::class, 'room'])->name('room');
 Route::get('/show', [ProductController::class, 'show'])->name('show');
 Route::get('/search_product', [ProductController::class, 'search'])->name('search_product');
 
-// 新規作成フォーム表示 検索機能あり--------------------------------------------------------------------
-Route::get('/new_show', [ProductController::class, 'new_show'])->name('new_show');
-Route::get('/new_product', [ProductController::class, 'new'])->name('new_product');
-
-// 登録画面表示
-Route::get('/room/create', [RoomController::class, 'create'])->name('create');
+// 新規作成フォーム表示 --------------------------------------------------------------------
+Route::get('/index', [ProductController::class, 'index'])->name('index');
 // 登録
 Route::post('/store', [ProductController::class, 'store'])->name('store');
 
+// 編集・削除フォーム表示 --------------------------------------------------------------------
+Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('edit');
+// 編集 --------------------------------------------------------------------
+Route::post('/update', [ProductController::class, 'update'])->name('update');
+// 削除 --------------------------------------------------------------------
+Route::post('/destroy', [ProductController::class, 'destroy'])->name('destroy');
 
-// 編集フォーム表示 検索機能あり    不要の可能性--------------------------------------------------------------------
-Route::get('/edit_show', [ProductController::class, 'edit_show'])->name('edit_show');
-Route::get('/edit_product', [ProductController::class, 'edit'])->name('edit_product');
+
 
 

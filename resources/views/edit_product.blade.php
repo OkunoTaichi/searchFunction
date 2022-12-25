@@ -8,14 +8,9 @@
 
       <main class="py-4">
 
-        <div class="change_nav">
-          @include('search_layouts.change_nav')<!-- 検索バーを継承 -->
-        </div>
 
         <div class="container">
-          @include('search_layouts.searching_nav.search_nav')<!-- 検索バーを継承 -->
 
-          @include('search_layouts.search_table')<!-- 一覧表示を継承 -->
         </div>
       </main>
     </div>

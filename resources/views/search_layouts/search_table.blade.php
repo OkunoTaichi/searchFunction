@@ -1,5 +1,7 @@
 
-
+@if(session('err_msg'))
+    <p class="text-danger">{{ session('err_msg') }}</p>
+@endif
 <!--検索結果テーブル 検索された時のみ表示する-->
 @if (!empty($products))
     <div class="productTable" id="detail">
@@ -31,7 +33,8 @@
                 <td>{{ $product->product_name }}</td>
                 <td>{{ $product->product_ab_name }}</td>
                 
-                <!-- <td><a href="#" class="btn btn-primary btn-sm">商品詳細</a></td> -->
+                <!-- 編集・削除 -->
+                <td><a href="/edit/{{ $product->id }}" class="btn btn-primary btn-sm">編集・削除</a></td>
                 </tr>
             @endforeach   
         </table>
