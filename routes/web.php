@@ -24,22 +24,22 @@ Route::get('/', function () {
 Auth::routes();
 
 
-// 一覧表示 検索機能あり--------------------------------------------------------------------
-Route::get('/searching/show', [ProductController::class, 'show'])->name('show');
-Route::get('/searching/search_product', [ProductController::class, 'search'])->name('search_product');
+Route::prefix('searching')->group(function() {
 
-// 新規作成フォーム表示 --------------------------------------------------------------------
-Route::get('/searching/index', [ProductController::class, 'index'])->name('index');
-// 登録
-Route::post('/searching/store', [ProductController::class, 'store'])->name('store');
+    // 一覧表示 検索機能あり--------------------------------------------------------------------
+    Route::get('show', [ProductController::class, 'show'])->name('show');
+    Route::get('index', [ProductController::class, 'search'])->name('index');
 
-// 編集・削除フォーム表示 --------------------------------------------------------------------
-Route::get('/searching/edit/{id}', [ProductController::class, 'edit'])->name('edit');
-// 編集 --------------------------------------------------------------------
-Route::post('/searching/update', [ProductController::class, 'update'])->name('update');
-// 削除 --------------------------------------------------------------------
-Route::post('/searching/destroy', [ProductController::class, 'destroy'])->name('destroy');
+    // 新規作成フォーム表示 --------------------------------------------------------------------
+    Route::get('create', [ProductController::class, 'create'])->name('create');
+    // 登録
+    Route::post('store', [ProductController::class, 'store'])->name('store');
 
+    // 編集・削除フォーム表示 --------------------------------------------------------------------
+    Route::get('edit/{id}', [ProductController::class, 'edit'])->name('edit');
+    // 編集 --------------------------------------------------------------------
+    Route::post('update', [ProductController::class, 'update'])->name('update');
+    // 削除 --------------------------------------------------------------------
+    Route::post('destroy', [ProductController::class, 'destroy'])->name('destroy');
 
-
-
+});

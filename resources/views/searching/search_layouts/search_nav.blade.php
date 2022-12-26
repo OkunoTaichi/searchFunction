@@ -1,11 +1,9 @@
   <div class="mx-auto" id="search">
-    <br>
-    <h2 class="text-center">一覧、検索画面</h2>
-    <br>
+   
     <!--検索フォーム-->
     <div class="row">
       <div class="col-sm">
-        <form method="GET" action="{{ route('search_product')}}">
+        <form method="GET" action="{{ route('index')}}">
           <div class="form-group row mb-4">
             <label class="col-sm-2 col-form-label">名称</label>
             <!--入力-->
@@ -68,7 +66,7 @@
                 <td>{{ $product->category->category_name }}</td>
                 
                 <!-- サマリーテーブル -->
-                <td>{{ $product->price }}</td>
+                <td>{{ $product->SummarySectionCode }}</td>
                 <td>{{ $product->product_name }}</td>
                 <td>{{ $product->product_ab_name }}</td>
                 
@@ -86,7 +84,7 @@
 
   <!--ページネーション-->
   <div class="d-flex justify-content-center">
-      {{-- appendsでカテゴリを選択したまま遷移 --}}
+      <!-- {{-- appendsでカテゴリを選択したまま遷移 --}} -->
       {{ $products->appends(request()->input())->links() }}
   </div>
   <!--ページネーションここまで-->

@@ -34,6 +34,17 @@
 </body>
 </html>
 
+<style>
+    /* オリジナル */
+    .form-wrap{
+        position: relative;
+    }
+    .delete{
+        position: absolute;
+        bottom: 0;
+        left: 250px;
+    }
+</style>
 
 <script>
   function checkSubmit(){

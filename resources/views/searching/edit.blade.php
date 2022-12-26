@@ -2,6 +2,7 @@
 @section('searching.layout.title', '変更・削除')
 
 @section('searching.content') 
+
 <div class="container form-wrap">
 
   <h2>更新画面</h2>
@@ -23,8 +24,8 @@
         <input type="text" class="form-control" id="product_ab_name" name="product_ab_name" value="{{ $input->product_ab_name }}">
     </div>
     <div class="mb-3">
-        <label for="price" class="form-label">集計部門コード</label>
-        <input type="text" class="form-control" id="price" name="price" value="{{ $input->price }}">
+        <label for="SummarySectionCode" class="form-label">集計部門コード</label>
+        <input type="text" class="form-control" id="SummarySectionCode" name="SummarySectionCode" value="{{ $input->SummarySectionCode }}">
     </div>
     <div class="mt-5 d-inline-block">
       <a class="btn btn-secondary" href="{{ route('show') }}">
@@ -40,10 +41,11 @@
   <form class="card-body delete" action="{{ route('destroy') }}" method="POST" onSubmit="return checkDestroy()">
       @csrf
       <input type="hidden" name="id" value="{{ $input->id }}">
-      <button type="submit" class="btn btn-primary">削除する</button>
+      <button type="submit" class="btn btn-danger">削除する</button>
   </form>
       
 </div>
+
 @endsection
 
 

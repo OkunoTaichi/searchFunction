@@ -30,7 +30,7 @@ class ProductController extends Controller
        
 
         // View に渡す
-        return view('/searching/search_product', [
+        return view('/searching/index', [
             'categories' => $categories,
             'searchWord' => $searchWord,
             'categoryId' => $categoryId
@@ -60,13 +60,13 @@ class ProductController extends Controller
         }
 
         // $queryをcategory_idの昇順に並び替えて$productsに代入
-        $products = $query->orderBy('category_id', 'asc')->paginate(15);
+        $products = $query->orderBy('category_id', 'asc')->paginate(10);
 
         // categoriesテーブルからgetLists();関数でcategory_nameとidを取得する
         $category = new Category;
         $categories = $category->getLists();
 
-        return view('/searching/search_product', [
+        return view('/searching/index', [
             'products' => $products,
             'categories' => $categories,
             'searchWord' => $searchWord,
@@ -89,12 +89,11 @@ class ProductController extends Controller
      * データを受け取る 
      * @return view
      */
-    public function index()
+    public function create()
     {
     $categories = DB::table('categories')->get();
 
-    //    dd($categories);
-    return view( '/searching/index' ,compact('categories') );
+    return view( '/searching/create' ,compact('categories') );
     }
     /**
      * 登録する 
@@ -159,7 +158,7 @@ class ProductController extends Controller
             \DB::commit();
             $input->fill([
                 'product_name' => $inputs['product_name'],
-                'price' => $inputs['price'],
+                'SummarySectionCode' => $inputs['SummarySectionCode'],
                 'product_ab_name' => $inputs['product_ab_name']
             ]);
             $input->save();
@@ -186,28 +185,8 @@ class ProductController extends Controller
         \Session::flash('err_msg' , '削除しました。');
         return redirect( route('show') );
     }
+// 変更・削除フォーム表示ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-   
-
 
 
 }

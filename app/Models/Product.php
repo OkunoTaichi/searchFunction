@@ -18,7 +18,7 @@ class Product extends Model
     [
         'product_name',
         'category_id',
-        'price',
+        'SummarySectionCode',
         'product_ab_name'
     ];
 
