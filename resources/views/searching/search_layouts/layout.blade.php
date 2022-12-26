@@ -7,8 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <!-- <title>@yield('title')</title> -->
+    <!-- <title>{{ config('app.name', 'Laravel') }}</title> -->
+    <title>@yield('searching.layout.title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -22,14 +22,34 @@
 </head>
 <body>
     <header>
-       @include('header')
+       @include('searching.search_layouts.header')
     </header>
     <br>
-    <div class="container">
-        @yield('content')
-    </div>
+    <main class="py-4">
+        @yield('searching.content')
+    </main>
     <footer class="footer bg-dark  fixed-bottom">
-        @include('footer')
+        
     </footer>
 </body>
 </html>
+
+
+<script>
+  function checkSubmit(){
+      if(window.confirm('変更してよろしいですか？')){
+          return true;
+      } else {
+          return false;
+      }
+  }
+
+  function checkDestroy(){
+      if(window.confirm('削除してよろしいですか？')){
+          return true;
+      } else {
+          return false;
+      }
+  }
+
+</script>

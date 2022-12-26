@@ -63,17 +63,17 @@
 
           @foreach($products as $product)
               <tr>
-              <!-- デパートメントテーブル -->
-              <td>{{ $product->category->category_code }}</td>
-              <td>{{ $product->category->category_name }}</td>
-              
-              <!-- サマリーテーブル -->
-              <td>{{ $product->price }}</td>
-              <td>{{ $product->product_name }}</td>
-              <td>{{ $product->product_ab_name }}</td>
-              
-              <!-- 編集・削除 -->
-              <td><a href="/edit/{{ $product->id }}" class="btn btn-primary btn-sm">編集・削除</a></td>
+                <!-- デパートメントテーブル -->
+                <td>{{ $product->category->category_code }}</td>
+                <td>{{ $product->category->category_name }}</td>
+                
+                <!-- サマリーテーブル -->
+                <td>{{ $product->price }}</td>
+                <td>{{ $product->product_name }}</td>
+                <td>{{ $product->product_ab_name }}</td>
+                
+                <!-- 編集・削除 -->
+                <td><a href="/searching/edit/{{ $product->id }}" class="btn btn-primary btn-sm">編集・削除</a></td>
               </tr>
           @endforeach   
       </table>

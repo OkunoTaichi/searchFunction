@@ -30,7 +30,7 @@ class ProductController extends Controller
        
 
         // View に渡す
-        return view('search_product', [
+        return view('/searching/search_product', [
             'categories' => $categories,
             'searchWord' => $searchWord,
             'categoryId' => $categoryId
@@ -66,7 +66,7 @@ class ProductController extends Controller
         $category = new Category;
         $categories = $category->getLists();
 
-        return view('search_product', [
+        return view('/searching/search_product', [
             'products' => $products,
             'categories' => $categories,
             'searchWord' => $searchWord,
@@ -94,7 +94,7 @@ class ProductController extends Controller
     $categories = DB::table('categories')->get();
 
     //    dd($categories);
-    return view( 'index' ,compact('categories') );
+    return view( '/searching/index' ,compact('categories') );
     }
     /**
      * 登録する 
@@ -140,7 +140,7 @@ class ProductController extends Controller
             \Session::flash('err_msg','選択されたデータはありませんでした。');
             return redirect(route('search_product'));
         }
-        return view('edit',compact('input'));
+        return view('/searching/edit',compact('input'));
     }
      /**
      * 変更する 

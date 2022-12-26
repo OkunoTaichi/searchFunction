@@ -18,27 +18,27 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     // return view('auth.login');
     // return view('welcome');
-    return view('index');
+    return view('/searching/home');
 });
 
 Auth::routes();
 
 
 // 一覧表示 検索機能あり--------------------------------------------------------------------
-Route::get('/show', [ProductController::class, 'show'])->name('show');
-Route::get('/search_product', [ProductController::class, 'search'])->name('search_product');
+Route::get('/searching/show', [ProductController::class, 'show'])->name('show');
+Route::get('/searching/search_product', [ProductController::class, 'search'])->name('search_product');
 
 // 新規作成フォーム表示 --------------------------------------------------------------------
-Route::get('/index', [ProductController::class, 'index'])->name('index');
+Route::get('/searching/index', [ProductController::class, 'index'])->name('index');
 // 登録
-Route::post('/store', [ProductController::class, 'store'])->name('store');
+Route::post('/searching/store', [ProductController::class, 'store'])->name('store');
 
 // 編集・削除フォーム表示 --------------------------------------------------------------------
-Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('edit');
+Route::get('/searching/edit/{id}', [ProductController::class, 'edit'])->name('edit');
 // 編集 --------------------------------------------------------------------
-Route::post('/update', [ProductController::class, 'update'])->name('update');
+Route::post('/searching/update', [ProductController::class, 'update'])->name('update');
 // 削除 --------------------------------------------------------------------
-Route::post('/destroy', [ProductController::class, 'destroy'])->name('destroy');
+Route::post('/searching/destroy', [ProductController::class, 'destroy'])->name('destroy');
 
 
 
