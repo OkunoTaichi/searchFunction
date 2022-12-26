@@ -15,16 +15,16 @@
     <input type="hidden" name="id" value="{{ $input->id }}">
     <input type="hidden" name="category_id" value="{{ $input->category_id }}">
   
-    <div class="mb-3">
-        <label for="product_name" class="form-label">集計部門名称</label>
-        <input type="text" class="form-control" id="product_name" name="product_name" value="{{ $input->product_name }}">
+    <div class="mb-3 d-flex">
+        <label for="SummarySectionName" class="form-label col-2">集計部門名称</label>
+        <input type="text" class="form-control" id="SummarySectionName" name="SummarySectionName" value="{{ $input->SummarySectionName }}">
     </div>
-    <div class="mb-3">
-        <label for="product_ab_name" class="form-label">集計部門略称</label>
+    <div class="mb-3 d-flex">
+        <label for="product_ab_name" class="form-label col-2">集計部門略称</label>
         <input type="text" class="form-control" id="product_ab_name" name="product_ab_name" value="{{ $input->product_ab_name }}">
     </div>
-    <div class="mb-3">
-        <label for="SummarySectionCode" class="form-label">集計部門コード</label>
+    <div class="mb-3 d-flex">
+        <label for="SummarySectionCode" class="form-label col-2">集計部門コード</label>
         <input type="text" class="form-control" id="SummarySectionCode" name="SummarySectionCode" value="{{ $input->SummarySectionCode }}">
     </div>
     <div class="mt-5 d-inline-block">

@@ -52,7 +52,7 @@ class ProductController extends Controller
       
         // 入力欄に商品名が入力された場合、productsテーブルから一致する商品を$queryに代入
         if (isset($searchWord)) {
-            $query->where('product_name', 'like', '%' . self::escapeLike($searchWord) . '%');
+            $query->where('SummarySectionName', 'like', '%' . self::escapeLike($searchWord) . '%');
         }
         // カテゴリが選択された場合、categoriesテーブルからcategory_idが一致する商品を$queryに代入
         if (isset($categoryId)) {
@@ -157,7 +157,7 @@ class ProductController extends Controller
             $input = Product::find($inputs['id']);
             \DB::commit();
             $input->fill([
-                'product_name' => $inputs['product_name'],
+                'SummarySectionName' => $inputs['SummarySectionName'],
                 'SummarySectionCode' => $inputs['SummarySectionCode'],
                 'product_ab_name' => $inputs['product_ab_name']
             ]);

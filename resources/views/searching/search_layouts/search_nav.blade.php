@@ -67,7 +67,7 @@
                 
                 <!-- サマリーテーブル -->
                 <td>{{ $product->SummarySectionCode }}</td>
-                <td>{{ $product->product_name }}</td>
+                <td>{{ $product->SummarySectionName }}</td>
                 <td>{{ $product->product_ab_name }}</td>
                 
                 <!-- 編集・削除 -->

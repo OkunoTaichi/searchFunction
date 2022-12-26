@@ -16,7 +16,7 @@ class Product extends Model
     //可変項目
     protected $fillable = 
     [
-        'product_name',
+        'SummarySectionName',
         'category_id',
         'SummarySectionCode',
         'product_ab_name'
