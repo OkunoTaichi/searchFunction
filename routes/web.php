@@ -23,9 +23,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::post('/room', [RoomController::class, 'room'])->name('room');
-
 
 // 一覧表示 検索機能あり--------------------------------------------------------------------
 Route::get('/show', [ProductController::class, 'show'])->name('show');

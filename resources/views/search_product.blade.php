@@ -1,19 +1,20 @@
-@include('search_layouts.header')
+@include('search_layouts.head')
   <body>
    
     <div id="app">
-      <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        @include('search_layouts.nav')<!-- ログインナビゲーションを継承 -->
-      </nav>
+      <header class="">
+        @include('search_layouts.header')<!-- ログインナビゲーションを継承 -->
+      </header>
 
       <main class="py-4">  
         <div class="container">
+          <h2>一覧表示</h2>
           <div class="change_nav">
-            @include('search_layouts.change_nav')<!-- 新規作成などのページ遷移ナビゲーションを継承 -->
+            @include('search_layouts.page_nav')<!-- 新規作成などのページ遷移ナビゲーションを継承 -->
           </div>
           @include('search_layouts.searching_nav.search_nav')<!-- 検索バーを継承 -->
 
-          @include('search_layouts.search_table')<!-- 一覧表示を継承 -->
+    
         </div>
       </main>
     </div>
